@@ -34,6 +34,7 @@ Consultings days can be requested to help for the implementation.
 The project now supports 7 different LLM providers.
   * Install the library related to the provider you want to use (see requirements.txt)
   * Configure the API key in the .env file
+
 The following parameters are optional and can be configured in the .env file:
   * Model
   * Temperature
@@ -44,6 +45,7 @@ The following parameters are optional and can be configured in the .env file:
 The script supports two different methods of sending emails:
   * Azure AD + Microsoft Graph
   * SMTP classic
+
 You can configure the method to use in the .env file.
 
 ## Configuration of the VTOM server
@@ -61,11 +63,11 @@ Create an alarm in VTOM to trigger the script in case of error.
 ```bash
 python vtom_api_analyzer.py -f {VT_JOB_LOG_OUT_NAME} -e {VT_ENVIRONMENT_NAME} -a {VT_APPLICATION_NAME} -j {VT_JOB_NAME} --to {VT_EMAIL_RECIPIENTS} --agent {VT_JOB_HOSTS_ERROR}
 ```
-It is possible to configure the language of the analysis and the email in the .env file (optional).
+It is possible to configure the language of the analysis and the email in the .env file (optional).  
 The email sent contains the analysis of the error, the instruction of the job or an external link if it is an external instruction, the context of the job (variables, etc.) and the logs of the job as attachments.
 
 ### Limitations
-Multi-agents jobs are not supported.
+Multi-agents jobs are not supported.  
 If the instruction is external, the LLM will not be able to analyze it.
 
 # License
