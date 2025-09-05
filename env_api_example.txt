@@ -1,0 +1,64 @@
+# API key configuration for LLM providers
+# Uncomment and configure the API key for the provider you want to use
+
+# Groq (default)
+GROQ_API_KEY=your_groq_api_key_here
+
+# OpenAI
+# OPENAI_API_KEY=your_openai_api_key_here
+
+# Anthropic Claude
+# ANTHROPIC_API_KEY=your_anthropic_api_key_here
+
+# Google Gemini
+# GOOGLE_API_KEY=your_google_api_key_here
+
+# Mistral AI
+# MISTRAL_API_KEY=your_mistral_api_key_here
+
+# Together AI
+# TOGETHER_API_KEY=your_together_api_key_here
+
+# Cohere
+# COHERE_API_KEY=your_cohere_api_key_here
+
+# LLM configuration (optional - overrides default values)
+# Available models by provider:
+# - Groq: llama-3.3-70b-versatile, llama-3.1-70b-versatile, mixtral-8x7b-32768
+# - OpenAI: gpt-4, gpt-4-turbo, gpt-3.5-turbo
+# - Claude: claude-3-sonnet-20240229, claude-3-haiku-20240307, claude-3-opus-20240229
+# - Gemini: gemini-pro, gemini-pro-vision
+# - Mistral: mistral-large-latest, mistral-medium-latest, mistral-small-latest
+# - Together: meta-llama/Llama-2-70b-chat-hf, mistralai/Mixtral-8x7B-Instruct-v0.1
+# - Cohere: command, command-light, command-nightly
+LLM_MODEL=llama-3.3-70b-versatile
+LLM_TEMPERATURE=0.3
+LLM_MAX_TOKENS=3000
+
+# VTOM server configuration
+VTOM_SERVER=your_vtom_server_hostname_or_ip
+VTOM_PORT=30002
+VTOM_API_KEY=your_vtom_api_key_here
+
+# VTOM API versions
+VTOM_DOMAIN_API_VERSION=5.0
+VTOM_MONITORING_API_VERSION=2.0
+
+# Email sending configuration
+# Choose between "azure" (Microsoft Graph) or "smtp" (classic SMTP)
+MAIL_PROVIDER=azure
+
+# Azure App Registration configuration for Microsoft Graph (if MAIL_PROVIDER=azure)
+AZURE_CLIENT_ID=your_azure_client_id_here
+AZURE_CLIENT_SECRET=your_azure_client_secret_here
+AZURE_TENANT_ID=your_azure_tenant_id_here
+AZURE_FROM_EMAIL=demo@domain.com
+
+# Classic SMTP configuration (if MAIL_PROVIDER=smtp)
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
+SMTP_FROM_EMAIL=demo@domain.com
+SMTP_USE_TLS=true
+
