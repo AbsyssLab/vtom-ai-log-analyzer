@@ -32,6 +32,7 @@ Il est possible de faire appel à des jours de consulting pour l'implémentation
 Le projet supporte maintenant 7 fournisseurs LLM différents.
   * Installer la bibliothèque liée au fournisseur que vous voulez utiliser (voir requirements.txt)
   * Configurer la clé API dans le fichier .env
+
 Les paramètres suivants sont optionnels et peuvent être configurés dans le fichier .env:
   * Model
   * Temperature
@@ -42,6 +43,7 @@ Les paramètres suivants sont optionnels et peuvent être configurés dans le fi
 Le script supporte deux méthodes d'envoi de mails:
   * Azure AD + Microsoft Graph
   * SMTP classique
+
 Vous pouvez configurer la méthode à utiliser dans le fichier .env.
 
 ## Configuration du serveur VTOM
@@ -64,7 +66,7 @@ Il est possible de configurer le langage de l'analyse et de l'email dans le fich
 Le mail envoyé contient l'analyse de l'erreur, l'instruction du traitement ou un lien s'il s'agit d'une consigne externe, le contexte du traitement (variables, etc.) et les logs du Traitement en pièce jointes.
 
 ### Limitations
-Les Traitements Multi-agents ne sont pas supportés.
+Les Traitements Multi-agents ne sont pas supportés.  
 Si l'instruction est externe, le LLM ne pourra pas l'analyser.
 
 # Licence
