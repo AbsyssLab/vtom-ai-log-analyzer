@@ -64,7 +64,7 @@ Create an alarm in VTOM to trigger the script in case of error.
 python vtom_api_analyzer.py -f {VT_JOB_LOG_OUT_NAME} -e {VT_ENVIRONMENT_NAME} -a {VT_APPLICATION_NAME} -j {VT_JOB_NAME} --to {VT_EMAIL_RECIPIENTS} --agent {VT_JOB_HOSTS_ERROR}
 ```
 It is possible to configure the language of the analysis and the email in the .env file (optional).  
-The email sent contains the analysis of the error, the instruction of the job or an external link if it is an external instruction, the context of the job (variables, etc.) and the logs of the job as attachments.
+The email sent contains the analysis of the error, the instruction of the job or an external link if it is an external instruction, the context of the job (variables, etc.) and the logs of the job as attachments. See the [email_example.html](email_example.html) file for an example of the email.
 
 ### Limitations
 Multi-agents jobs are not supported.  

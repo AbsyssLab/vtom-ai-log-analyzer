@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VTOM Log Analysis - Example Email</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background-color: #f0f0f0; padding: 15px; border-radius: 5px; }
+        .error { background-color: #ffe6e6; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .solution { background-color: #e6f3ff; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .section { margin: 15px 0; }
+        .section h3 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        ul { margin: 5px 0; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 VTOM Log Analysis</h1>
+        <p><strong>Analysis Date:</strong> 15/12/2024 at 14:30</p>
+    </div>
+    
+    <div class="section">
+        <h3>📋 VTOM Context</h3>
+        <ul>
+            <li><strong>Job:</strong> Daily_Backup_Production</li>
+            <li><strong>Application:</strong> DataWarehouse</li>
+            <li><strong>Environment:</strong> PROD</li>
+            <li><strong>Execution Date:</strong> 15/12/2024 14:25:30</li>
+        </ul>
+    </div>
+    
+    <div class="error">
+        <h3>🚨 Error Analysis</h3>
+        <ul>
+            <li><strong>Main Error:</strong> Database connection timeout during backup process</li>
+            <li><strong>Error Type:</strong> Network/Connectivity Issue</li>
+            <li><strong>Severity:</strong> High</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>🔍 Technical Causes</h3>
+        <ul>
+            <li>Database server is experiencing high load and not responding to connection requests</li>
+            <li>Network latency between backup server and database server exceeds timeout threshold</li>
+            <li>Database connection pool is exhausted due to concurrent connections</li>
+            <li>Firewall rules may be blocking or throttling the connection</li>
+        </ul>
+    </div>
+    
+    <div class="solution">
+        <h3>⚡ Immediate Actions</h3>
+        <ul>
+            <li>Check database server status and resource utilization</li>
+            <li>Verify network connectivity between backup server and database</li>
+            <li>Review database connection pool configuration</li>
+            <li>Check firewall logs for any blocked connections</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>📋 Short-term Solutions</h3>
+        <ul>
+            <li>Increase database connection timeout values in backup configuration</li>
+            <li>Implement connection retry logic with exponential backoff</li>
+            <li>Optimize database connection pool settings</li>
+            <li>Schedule backup during off-peak hours to reduce database load</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>🎯 Priority Recommendations</h3>
+        <ul>
+            <li><strong>Critical:</strong> Implement database monitoring and alerting for connection issues</li>
+            <li><strong>High:</strong> Review and optimize database performance to handle backup load</li>
+            <li><strong>Medium:</strong> Consider implementing backup job distribution across multiple time slots</li>
+            <li><strong>Low:</strong> Document backup procedures and troubleshooting steps</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>🔧 Technical Details</h3>
+        <ul>
+            <li><strong>Error Code:</strong> DB_CONNECTION_TIMEOUT</li>
+            <li><strong>Timeout Value:</strong> 30 seconds</li>
+            <li><strong>Retry Attempts:</strong> 3</li>
+            <li><strong>Database Host:</strong> prod-db-01.company.com</li>
+            <li><strong>Port:</strong> 5432</li>
+            <li><strong>Database Name:</strong> production_warehouse</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h3>📄 Analysis Summary</h3>
+        <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap; font-family: monospace;">The Daily_Backup_Production job failed due to a database connection timeout. The backup process was unable to establish a connection to the production database server within the configured 30-second timeout period. This appears to be caused by high database load during peak hours and potentially insufficient connection pool configuration. The error occurred at 14:25:30 during the scheduled backup window. Immediate investigation of database server performance and network connectivity is recommended. Consider rescheduling the backup to off-peak hours and implementing more robust connection retry mechanisms.</pre>
+    </div>
+    
+    <div class="section">
+        <h3>📝 Job Instruction</h3>
+        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap; font-family: Arial, sans-serif;">
+<strong>Daily Production Database Backup Process</strong>
+
+This job is responsible for creating a daily backup of the production data warehouse database. The process involves:
+
+• <strong>Database Connection:</strong> Establishes a connection to the production PostgreSQL database server using configured credentials and connection parameters.
+
+• <strong>Backup Creation:</strong> Performs a full database dump using pg_dump utility with custom format for optimal compression and restore capabilities.
+
+• <strong>File Management:</strong> Creates timestamped backup files in the designated backup directory with proper naming convention for easy identification and rotation.
+
+• <strong>Verification:</strong> Validates that the backup file was successfully created and contains data before marking the job as completed.
+
+• <strong>Error Handling:</strong> Implements proper error checking and exit codes to ensure VTOM can properly track job success or failure status.
+
+The job is scheduled to run daily during off-peak hours to minimize impact on production database performance and user operations.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>🔧 Context (Variables)</h3>
+        <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap; font-family: monospace;">VT_JOB_NAME=Daily_Backup_Production
+VT_APPLICATION_NAME=DataWarehouse
+VT_ENVIRONMENT_NAME=PROD
+VT_JOB_HOSTS_ERROR=backup-server-01
+VT_JOB_LOG_OUT_NAME=/var/log/vtom/Daily_Backup_Production_20241215_142530.log
+DB_HOST=prod-db-01.company.com
+DB_PORT=5432
+DB_NAME=production_warehouse
+DB_USER=backup_user
+BACKUP_DIR=/backup/production
+BACKUP_RETENTION_DAYS=30
+COMPRESSION_ENABLED=true
+NOTIFICATION_EMAIL=admin@company.com</pre>
+    </div>
+    
+    <div class="section">
+        <h3>📎 Attachments</h3>
+        <p>This email contains the following files as attachments:</p>
+        <ul>
+            <li>VTOM logs file (stdout + stderr)</li>
+        </ul>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 15px; background-color: #f9f9f9; border-radius: 5px;">
+        <p><em>Analysis automatically generated by VTOM log analyzer with LLM via API</em></p>
+    </div>
+</body>
+</html>

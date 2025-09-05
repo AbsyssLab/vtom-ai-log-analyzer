@@ -63,7 +63,7 @@ python vtom_api_analyzer.py -f {VT_JOB_LOG_OUT_NAME} -e {VT_ENVIRONMENT_NAME} -a
 ```
 Il est possible de configurer le langage de l'analyse et de l'email dans le fichier .env (optionnel).
 
-Le mail envoyé contient l'analyse de l'erreur, l'instruction du traitement ou un lien s'il s'agit d'une consigne externe, le contexte du traitement (variables, etc.) et les logs du Traitement en pièce jointes.
+Le mail envoyé contient l'analyse de l'erreur, l'instruction du traitement ou un lien s'il s'agit d'une consigne externe, le contexte du traitement (variables, etc.) et les logs du Traitement en pièce jointes. Voir le fichier [email_example.html](email_example.html) pour un exemple de mail.
 
 ### Limitations
 Les Traitements Multi-agents ne sont pas supportés.  
